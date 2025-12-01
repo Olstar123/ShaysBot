@@ -133,7 +133,7 @@ impl EnderPearlPlugin {
                     source: CmdSource::Minecraft(None),
                     status: 402,
                     content: format!(
-                        "Your free trial has expired, please purchase WinRAR license: Max {limit} pearls"
+                        "no more than {limit} pearls fuck u"
                     ),
                 });
                 pearl_goto_events.write(PearlGotoEvent(PearlEvent {
