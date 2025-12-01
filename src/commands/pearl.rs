@@ -14,7 +14,7 @@ pub struct PearlCommandPlugin;
 
 impl Cmd for PearlCommandPlugin {
     fn aliases(&self) -> Vec<&'static str> {
-        vec!["pearl", "tp", "teleport", "warp", "home"]
+        vec!["pawbase", "pb"]
     }
 }
 
@@ -198,7 +198,7 @@ impl PearlCommandPlugin {
             else {
                 let location = &local_settings.auto_pearl.location;
                 msg_event.status = 404;
-                msg_event.content = format!("Pearl not found at {location}");
+                msg_event.content = format!("no pearl found at {location}");
                 msg_events.write(msg_event);
                 cmd_events.clear();
                 return;
@@ -206,9 +206,9 @@ impl PearlCommandPlugin {
 
             msg_event.status = 200;
             msg_event.content = match count {
-                0 => str!("I'm on my way, this was your last pearl!"),
-                1 => str!("I'm on my way, you have one more pearl!"),
-                c => format!("I'm on my way, you have {c} more pearls."),
+                0 => str!("im omw, that was ur last pearl (oh noes)"),
+                1 => str!("im omw u have 1 more pearl :3"),
+                c => format!("im omw u have {c} more pearls :3"),
             };
 
             msg_events.write(msg_event);
